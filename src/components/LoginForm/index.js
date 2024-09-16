@@ -6,8 +6,8 @@ import './index.css'
 
 class LoginForm extends Component {
   state = {
-    username: '',
-    password: '',
+    username: 'rahul',
+    password: 'rahul@2021',
     showSubmitError: false,
     errorMsg: '',
   }
@@ -56,14 +56,14 @@ class LoginForm extends Component {
 
     return (
       <>
-        <label className="label" htmlFor="userName">
+        <label className='label' htmlFor='userName'>
           USERNAME
         </label>
         <input
-          type="text"
-          id="userName"
-          placeholder="Username"
-          className="user-input"
+          type='text'
+          id='userName'
+          placeholder='Username'
+          className='user-input'
           value={username}
           onChange={this.onEnterUsername}
         />
@@ -76,14 +76,14 @@ class LoginForm extends Component {
 
     return (
       <>
-        <label className="label" htmlFor="password">
+        <label className='label' htmlFor='password'>
           Password
         </label>
         <input
-          className="user-input"
-          id="password"
-          type="password"
-          placeholder="Password"
+          className='user-input'
+          id='password'
+          type='password'
+          placeholder='Password'
           value={password}
           onChange={this.onChangePassword}
         />
@@ -95,24 +95,24 @@ class LoginForm extends Component {
     const {showSubmitError, errorMsg} = this.state
     const jwtToken = Cookies.get('jwt_token')
     if (jwtToken !== undefined) {
-      return <Redirect to="/" />
+      return <Redirect to='/' />
     }
 
     return (
-      <div className="jobby-app-container">
-        <div className="card-container">
+      <div className='jobby-app-container'>
+        <div className='card-container'>
           <img
-            src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-            alt="website logo"
-            className="website-logo"
+            src='https://assets.ccbp.in/frontend/react-js/logo-img.png'
+            alt='website logo'
+            className='website-logo'
           />
-          <form className="form-container" onSubmit={this.onSubmitForm}>
-            <div className="input-container">{this.renderUsername()}</div>
-            <div className="input-container">{this.renderPassword()}</div>
-            <button className="login-button" type="submit">
+          <form className='form-container' onSubmit={this.onSubmitForm}>
+            <div className='input-container'>{this.renderUsername()}</div>
+            <div className='input-container'>{this.renderPassword()}</div>
+            <button className='login-button' type='submit'>
               Login
             </button>
-            {showSubmitError && <p className="error-msg">*{errorMsg}</p>}
+            {showSubmitError && <p className='error-msg'>*{errorMsg}</p>}
           </form>
         </div>
       </div>
